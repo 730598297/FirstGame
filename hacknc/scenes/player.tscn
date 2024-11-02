@@ -53,8 +53,9 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a6olt"]
-radius = 17.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c2d2y"]
+radius = 9.60602
+height = 23.5784
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t1yon")
@@ -64,8 +65,9 @@ position = Vector2(2, -46)
 sprite_frames = SubResource("SpriteFrames_rhlno")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.521136
+frame_progress = 0.0201067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -29)
-shape = SubResource("CircleShape2D_a6olt")
+position = Vector2(2, -35)
+scale = Vector2(-2.10636, -2.29023)
+shape = SubResource("CapsuleShape2D_c2d2y")

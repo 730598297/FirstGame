@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgfe7xdjl4jqb"]
+
+[ext_resource type="Texture2D" uid="uid://b6617j7bf7l2a" path="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Yellow/Torch_Yellow.png" id="1_7emwt"]
+
+[sub_resource type="GDScript" id="GDScript_aixqg"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 400.0
+
+@onready var flip = $AnimatedSprite2D
+
+func _physics_process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gxiw"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(0, 0, 192, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgndu"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(192, 0, 192, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lriut"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(384, 0, 192, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5iy"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(576, 0, 192, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apo4b"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(768, 0, 192, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q24q"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(960, 0, 192, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rd6q"]
+atlas = ExtResource("1_7emwt")
+region = Rect2(1152, 0, 192, 137)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34kd4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gxiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgndu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lriut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apo4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q24q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rd6q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gc4vi"]
+radius = 20.0
+height = 52.0
+
+[node name="goblin" type="CharacterBody2D"]
+script = SubResource("GDScript_aixqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -62)
+sprite_frames = SubResource("SpriteFrames_34kd4")
+autoplay = "default"
+frame_progress = 0.170148
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -33)
+shape = SubResource("CapsuleShape2D_gc4vi")

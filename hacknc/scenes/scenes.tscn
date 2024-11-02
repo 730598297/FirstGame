@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://chqe630xtd42l"]
+[gd_scene load_steps=3 format=3 uid="uid://chqe630xtd42l"]
 
 [ext_resource type="PackedScene" uid="uid://dopa1aq0udscu" path="res://scenes/player.tscn" id="1_6owli"]
+[ext_resource type="PackedScene" uid="uid://bgfe7xdjl4jqb" path="res://scenes/goblin.tscn" id="2_jwom7"]
 
 [node name="Game" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(-46, -53)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -34)
 position_smoothing_enabled = true
+
+[node name="goblin" parent="." instance=ExtResource("2_jwom7")]
+position = Vector2(-242, -103)
