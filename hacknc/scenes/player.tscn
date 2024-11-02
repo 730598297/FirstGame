@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dopa1aq0udscu"]
+
+[ext_resource type="Texture2D" uid="uid://mo2a5k1wiwm1" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_1m8eb"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_t1yon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1sjd"]
+atlas = ExtResource("1_1m8eb")
+region = Rect2(0, 0, 192, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uqp8"]
+atlas = ExtResource("1_1m8eb")
+region = Rect2(192, 0, 192, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilfar"]
+atlas = ExtResource("1_1m8eb")
+region = Rect2(384, 0, 192, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8y0w"]
+atlas = ExtResource("1_1m8eb")
+region = Rect2(576, 0, 192, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbm63"]
+atlas = ExtResource("1_1m8eb")
+region = Rect2(768, 0, 192, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0og8m"]
+atlas = ExtResource("1_1m8eb")
+region = Rect2(960, 0, 192, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhlno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1sjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uqp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilfar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8y0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbm63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0og8m")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6olt"]
+radius = 17.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_t1yon")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -46)
+sprite_frames = SubResource("SpriteFrames_rhlno")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.521136
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -29)
+shape = SubResource("CircleShape2D_a6olt")
